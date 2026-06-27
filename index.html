@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="./favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>NexTask | Dashboard</title>
+</head>
+
+<body data-page="dashboard">
+
+    <main>
+
+        <!-- side -->
+        <aside class="sidebar">
+
+            <div class="logo sidelogo">
+                <i class="ri-checkbox-circle-fill"></i>
+                <h2>Nex<span>Task</span></h2>
+            </div>
+
+            <nav class="menu">
+                <a href="index.html" class="active"><i class="ri-home-4-line"></i>Dashboard</a>
+                <a href="tasks.html"><i class="ri-task-line"></i>Tasks</a>
+                <a href="event.html"><i class="ri-bubble-chart-line"></i>DOM Demo</a>
+                <a href="pipeline.html"><i class="ri-git-branch-line"></i>Pipeline</a>
+            </nav>
+
+        </aside>
+
+        <div class="container">
+
+            <!-- top -->
+            <header class="topbar">
+                <div class="logo toplogo">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <h2>Nex<span>Task</span></h2>
+                </div>
+
+                <div class="topbar-actions">
+                    <button id="theme" class="icon-btn">
+                        <i class="ri-sun-line"></i>
+                    </button>
+
+                    <button id="hamburger" class="icon-btn hamburger">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </header>
+
+            <section class="content">
+
+                <div class="welcome">
+                    <h1>Welcome</h1>
+                    <p>Track your tasks in real-time</p>
+                </div>
+
+                <div class="stats">
+
+                    <div class="card stat">
+                        <div class="icon purple">
+                            <i class="ri-task-line"></i>
+                        </div>
+                        <div>
+                            <h2 id="totalTasks">0</h2>
+                            <p>Total Tasks</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat">
+                        <div class="icon green">
+                            <i class="ri-check-line"></i>
+                        </div>
+                        <div>
+                            <h2 id="completedTasks">0</h2>
+                            <p>Completed</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat">
+                        <div class="icon orange">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <div>
+                            <h2 id="pendingTasks">0</h2>
+                            <p>Pending</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat">
+                        <div class="icon pink">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <div>
+                            <h2 id="completionRate">0%</h2>
+                            <p>Completion</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="grid">
+                    <!-- recent -->
+                    <div class="card">
+                        <div class="section-title">
+                            <h3>Recent Tasks</h3>
+                            <a href="tasks.html">View All</a>
+                        </div>
+                        <div id="recentTasks"></div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="overlay"></div>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

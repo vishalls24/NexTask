@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NexTask | Tasks</title>
+
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body data-page="tasks">
+    <main>
+
+        <!-- side -->
+        <aside class="sidebar">
+            <div class="logo sidelogo">
+                <i class="ri-checkbox-circle-fill"></i>
+                <h2>Nex<span>Task</span></h2>
+            </div>
+
+            <nav class="menu">
+                <a href="index.html"><i class="ri-home-4-line"></i>Dashboard</a>
+                <a href="tasks.html" class="active"><i class="ri-task-line"></i>Tasks</a>
+                <a href="event.html"><i class="ri-bubble-chart-line"></i>Event Demo</a>
+                <a href="pipeline.html"><i class="ri-git-branch-line"></i>Pipeline</a>
+            </nav>
+        </aside>
+
+
+        <div class="container">
+
+            <!-- top -->
+            <header class="topbar">
+                <div class="logo toplogo">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <h2>Nex<span>Task</span></h2>
+                </div>
+                <div class="topbar-actions">
+                    <button id="theme" class="icon-btn">
+                        <i class="ri-sun-line"></i>
+                    </button>
+
+                    <button id="hamburger" class="icon-btn hamburger">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+
+            </header>
+
+            <section class="content">
+
+                <div class="welcome">
+                    <h1>My Tasks</h1>
+                    <p>Manage all your daily tasks from one place.</p>
+                </div>
+
+                <div class="stats">
+
+                    <div class="card stat">
+                        <div class="icon purple">
+                            <i class="ri-task-line"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <h2 id="totalTasks">0</h2>
+                            <p>Total Tasks</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat">
+                        <div class="icon green">
+                            <i class="ri-check-line"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <h2 id="completedTasks">0</h2>
+                            <p>Completed</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat">
+                        <div class="icon orange">
+                            <i class="ri-time-line"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <h2 id="pendingTasks">0</h2>
+                            <p>Pending</p>
+                        </div>
+                    </div>
+
+                    <div class="card stat">
+                        <div class="icon pink">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <h2 id="completionRate">0%</h2>
+                            <p>Completion Rate</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card task-controls">
+                    <div class="search">
+                        <i class="ri-search-line"></i>
+                        <input id="searchTask" type="text" placeholder="Search tasks..." />
+                    </div>
+                    <select id="filterCategory">
+                        <option value="all">All Categories</option>
+                        <option value="study">Study</option>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="shopping">Shopping</option>
+                    </select>
+
+                    <button id="clearFilters" class="secondary-btn">Clear</button>
+
+                    <button id="openModal" class="primary-btn">
+                        <i class="ri-add-line"></i>
+                        Add Task
+                    </button>
+
+                </div>
+
+                <div class="card">
+                    <div class="section-title">
+                        <h3>Task List</h3>
+                        <button id="delAll" class="delAtt">Delete All Tasks</button>
+                    </div>
+
+                    <div id="taskGrid" class="task-grid"></div>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+
+
+    <div class="modal" id="taskModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Add Task</h2>
+                <button id="closeModal"><i class="ri-close-line"></i></button>
+            </div>
+
+            <form id="modalForm">
+                <input id="modalTitle" placeholder="Task title" required />
+                <select id="modalCategory" required>
+                    <option value="">Category</option>
+                    <option value="study">Study</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="shopping">Shopping</option>
+                </select>
+                <!-- <input id="modalDate" type="date" required /> -->
+                <textarea id="modalDesc" placeholder="Description"></textarea>
+                <button type="submit" class="primary-btn full">Save Task</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>

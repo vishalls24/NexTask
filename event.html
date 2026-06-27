@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="./favicon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @media (max-width: 1024px) {
+            .event-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .right-column {
+                order: -1;
+            }
+        }
+
+        .playground {
+            width: 100%;
+            overflow: hidden;
+        }
+
+
+        @media (max-width: 768px) {
+            .event-layout {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .box {
+                padding: 14px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toggle {
+                flex-direction: column;
+            }
+
+            .section-title h3 {
+                font-size: 16px;
+            }
+
+            .log-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .element-tag {
+                font-size: 10px;
+                padding: 4px 10px;
+            }
+
+            .hint {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <title>NexTask | Event Demo</title>
+</head>
+
+<body data-page="event">
+
+    <main>
+
+        <!-- side -->
+        <aside class="sidebar">
+
+            <div class="logo sidelogo">
+                <i class="ri-checkbox-circle-fill"></i>
+                <h2>Task<span>Flow</span></h2>
+            </div>
+
+            <nav class="menu">
+                <a href="index.html">
+                    <i class="ri-home-4-line"></i>
+                    Dashboard
+                </a>
+
+                <a href="tasks.html">
+                    <i class="ri-task-line"></i>
+                    Tasks
+                </a>
+
+                <a href="event.html" class="active">
+                    <i class="ri-bubble-chart-line"></i>
+                    Event Demo
+                </a>
+
+                <a href="pipeline.html">
+                    <i class="ri-git-branch-line"></i>
+                    Pipeline
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <div class="container">
+
+            <!-- top -->
+            <header class="topbar">
+                <div class="logo toplogo">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <h2>Nex<span>Task</span></h2>
+                </div>
+                <div class="topbar-actions">
+                    <button id="theme" class="icon-btn">
+                        <i class="ri-sun-line"></i>
+                    </button>
+
+                    <button id="hamburger" class="icon-btn hamburger">
+                        <i class="ri-menu-line"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <section class="content">
+
+                <div class="welcome">
+                    <h1>Event Propagation Demo</h1>
+                    <p>Explore how events propagate through the DOM using capturing and bubbling phases.</p>
+                </div>
+
+                <div class="event-layout">
+
+                    <div class="left-column">
+                        <div class="card">
+                            <div class="section-title">
+                                <h3>Interactive Playground</h3>
+                            </div>
+
+                            <p class="sub-text">Click on any element inside the nested boxes to see event propagation.
+                            </p>
+
+                            <div class="playground">
+                                <div class="box grandparent" id="grandparentBox" data-name="grandparent">
+                                    <h2>Grandparent</h2>
+                                    <span class="element-tag">DIV</span>
+
+                                    <div class="box parent" id="parentBox" data-name="parent">
+                                        <h2>Parent</h2>
+                                        <span class="element-tag">DIV</span>
+
+                                        <button class="box child" id="childBox" data-name="child">
+                                            <h2>Child</h2>
+                                            <span class="element-tag">BUTTON</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="hint">
+                                <i class="ri-information-line"></i>
+                                Try clicking the Child button and watch the event flow.
+                            </p>
+
+                        </div>
+
+                        <div class="card">
+                            <h3 class="info-heading">How Event Propagation Works</h3>
+
+                            <div class="info-grid">
+
+                                <div class="info-box">
+                                    <div class="info-icon capture">
+                                        <i class="ri-arrow-down-line"></i>
+                                    </div>
+
+                                    <div>
+                                        <h4>Capturing Phase</h4>
+                                        <p>Events travel from the document down to the clicked element.</p>
+                                    </div>
+                                </div>
+
+                                <div class="info-box">
+                                    <div class="info-icon bubble">
+                                        <i class="ri-arrow-up-line"></i>
+                                    </div>
+
+                                    <div>
+                                        <h4>Bubbling Phase</h4>
+                                        <p>After reaching the target, events bubble back upward.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note">
+                                <i class="ri-information-fill"></i>
+                                <p>The target phase occurs when the event reaches the element that was actually clicked.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-column">
+
+                        <div class="card">
+                            <div class="section-title">
+                                <h3>Controls</h3>
+                            </div>
+
+                            <label class="label">Propagation Phase</label>
+
+                            <div class="toggle">
+                                <button id="bubbleBtn" class="active bubbleBtn">
+                                    <i class="ri-arrow-up-line"></i>
+                                    Bubbling
+                                </button>
+
+                                <button id="captureBtn" class="captureBtn">
+                                    <i class="ri-arrow-down-line"></i>
+                                    Capturing
+                                </button>
+                            </div>
+
+                            <label class="label">Event Type</label>
+
+                            <select id="eventType">
+                                <option value="click">Click</option>
+                                <option value="dblclick">Double Click</option>
+                                <option value="mouseover">Mouse Over</option>
+                            </select>
+
+                            <button class="clear-btn" id="clearLog">
+                                <i class="ri-delete-bin-line"></i>
+                                Clear Log
+                            </button>
+                        </div>
+
+                        <div class="card">
+
+                            <div class="section-title">
+                                <h3>
+                                    Event Log
+                                    <span id="logCount">0</span>
+                                </h3>
+                                <span class="live">● Live</span>
+                            </div>
+
+                            <div id="logList">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="overlay"></div>
+
+    </main>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>

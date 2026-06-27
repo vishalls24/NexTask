@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexTask | Pipeline</title>
+
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css" rel="stylesheet" />
+
+    <style>
+        .right-panel .card {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body data-page="pipeline">
+    <main>
+        <!-- side -->
+        <aside class="sidebar">
+            <div class="logo sidelogo">
+                <i class="ri-checkbox-circle-fill"></i>
+                <h2>Nex<span>Task</span></h2>
+            </div>
+
+            <nav class="menu">
+                <a href="index.html"><i class="ri-home-4-line"></i>Dashboard</a>
+                <a href="tasks.html"><i class="ri-task-line"></i>Tasks</a>
+                <a href="event.html"><i class="ri-bubble-chart-line"></i>Event Demo</a>
+                <a href="pipeline.html" class="active"><i class="ri-git-branch-line"></i>Pipeline</a>
+            </nav>
+        </aside>
+
+        <div class="container">
+            <header class="topbar">
+                <div class="logo toplogo">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    <h2>Nex<span>Task</span></h2>
+                </div>
+
+                <div class="topbar-actions">
+                    <button id="theme" class="icon-btn">
+                        <i class="ri-sun-line"></i>
+                    </button>
+
+                    <button id="hamburger" class="icon-btn hamburger">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </header>
+
+            <section class="content">
+                <div class="welcome">
+                    <h1>Browser Rendering Pipeline</h1>
+                    <p>Step-by-step view of browser rendering process</p>
+                </div>
+
+                <div class="pipeline-grid">
+
+                    <div class="card pipeline">
+                        <div class="step">
+                            <span class="num">1</span>
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Browser receives HTML</p>
+                            </div>
+                            <span class="tag input">Input</span>
+                        </div>
+
+                        <div class="step">
+                            <span class="num">2</span>
+                            <div>
+                                <h3>Tokenization</h3>
+                                <p>HTML broken into tokens</p>
+                            </div>
+                            <span class="tag process">Processing</span>
+                        </div>
+
+                        <div class="step">
+                            <span class="num">3</span>
+                            <div>
+                                <h3>Parsing</h3>
+                                <p>Tokens converted to nodes</p>
+                            </div>
+                            <span class="tag process">Processing</span>
+                        </div>
+
+                        <div class="step">
+                            <span class="num">4</span>
+                            <div>
+                                <h3>DOM Tree</h3>
+                                <p>Nodes organized into DOM</p>
+                            </div>
+                            <span class="tag output">Output</span>
+                        </div>
+
+                        <div class="step">
+                            <span class="num">5</span>
+                            <div>
+                                <h3>CSS</h3>
+                                <p>CSS processed</p>
+                            </div>
+                            <span class="tag input">Input</span>
+                        </div>
+
+                        <div class="step">
+                            <span class="num">6</span>
+                            <div>
+                                <h3>CSSOM</h3>
+                                <p>CSS Object Model created</p>
+                            </div>
+                            <span class="tag output">Output</span>
+                        </div>
+
+                        <div class="step">
+                            <span class="num">7</span>
+                            <div>
+                                <h3>Render Tree</h3>
+                                <p>DOM + CSSOM combined</p>
+                            </div>
+                            <span class="tag process">Processing</span>
+                        </div>
+
+                        <div class="step">
+                            <span class="num">8</span>
+                            <div>
+                                <h3>Painting</h3>
+                                <p>Pixels rendered</p>
+                            </div>
+                            <span class="tag output">Output</span>
+                        </div>
+                    </div>
+
+                    <div class="right-panel">
+                        <div class="card">
+                            <h3>Step Explanation</h3>
+                            <p>The browser converts code into pixels step by step.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Key Flow</h3>
+                            <p>HTML → DOM → CSSOM → Render Tree → Paint</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Analogy</h3>
+                            <p>HTML = blueprint, CSS = design, browser = builder</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <footer class="dashboard-footer">
+        © 2026 | NexTask<span>VISHAL SOLANKI</span>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
